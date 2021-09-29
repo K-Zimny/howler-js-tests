@@ -298,3 +298,25 @@ body {
     opacity: 0;
   }
 }
+
+/* ------------------------------ */
+/* custom styles */
+
+.audio-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlsOuter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlsInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -76,9 +76,10 @@ Player.prototype = {
     } else {
       sound = data.howl = new Howl({
         src: [
-          "./audio/" + data.file + ".webm",
+          // "./audio/" + data.file + ".webm",
           "./audio/" + data.file + ".mp3",
         ],
+        volume: 0.5,
         html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
         onplay: function () {
           // Display the duration.
@@ -302,6 +303,11 @@ Player.prototype = {
 // Setup our new audio player class and pass it the playlist.
 var player = new Player([
   {
+    title: "Capture Your Perfect",
+    file: "capture_your_perfect",
+    howl: null,
+  },
+  {
     title: "Rave Digger",
     file: "rave_digger",
     howl: null,
@@ -318,7 +324,14 @@ var player = new Player([
   },
 ]);
 
+// Auto Play music on page load
+
+window.onload = (event) => {
+  player.play();
+};
+
 // Bind our player controls.
+
 playBtn.addEventListener("click", function () {
   player.play();
 });
