@@ -366,12 +366,14 @@ waveform.addEventListener("click", function (event) {
   player.seek(event.clientX / window.innerWidth);
 });
 
-// Removed Seek Option
+//  Seek Option
 
-// bar.addEventListener("click", function (event) {
-//   player.seek(event.clientX / window.innerWidth);
-//   console.log(event.clientX / window.innerWidth);
-// });
+bar.addEventListener("click", function (event) {
+  player.seek(event.clientX / window.innerWidth);
+  console.log(event.clientX / window.innerWidth);
+});
+
+//  Seek Option
 
 playlistBtn.addEventListener("click", function () {
   player.togglePlaylist();
