@@ -30,6 +30,7 @@ var elms = [
   "barEmpty",
   "barFull",
   "sliderBtn",
+  "seekerIcon",
 ];
 elms.forEach(function (elm) {
   window[elm] = document.getElementById(elm);
@@ -256,6 +257,10 @@ Player.prototype = {
     timer.innerHTML = self.formatTime(Math.round(seek));
     progress.style.width = ((seek / sound.duration()) * 100 || 0) + "%";
 
+    // Update seeker icon
+
+    // seekerIcon.style.left = ((seek / sound.duration()) * 100 || 0) + "%";
+
     // If the sound is still playing, continue stepping.
     if (sound.playing()) {
       requestAnimationFrame(self.step.bind(self));
@@ -335,6 +340,8 @@ var player = new Player([
   },
 ]);
 
+// Progress bar length
+
 // Auto Play music on page load
 
 // window.onload = (event) => {
@@ -358,9 +365,14 @@ nextBtn.addEventListener("click", function () {
 waveform.addEventListener("click", function (event) {
   player.seek(event.clientX / window.innerWidth);
 });
-bar.addEventListener("click", function (event) {
-  player.seek(event.clientX / window.innerWidth);
-});
+
+// Removed Seek Option
+
+// bar.addEventListener("click", function (event) {
+//   player.seek(event.clientX / window.innerWidth);
+//   console.log(event.clientX / window.innerWidth);
+// });
+
 playlistBtn.addEventListener("click", function () {
   player.togglePlaylist();
 });
