@@ -11,6 +11,7 @@
 // Cache references to DOM elements.
 var elms = [
   "track",
+  "artist",
   "timer",
   "duration",
   "playBtn",
@@ -44,7 +45,10 @@ var Player = function (playlist) {
   this.index = 0;
 
   // Display the title of the first track.
-  track.innerHTML = "1. " + playlist[0].title;
+  track.innerHTML = playlist[0].title;
+
+  // Display the title of the first artist.
+  artist.innerHTML = playlist[0].artist;
 
   // Setup the playlist display.
   playlist.forEach(function (song) {
@@ -126,7 +130,10 @@ Player.prototype = {
     sound.play();
 
     // Update the track display.
-    track.innerHTML = index + 1 + ". " + data.title;
+    track.innerHTML = data.title;
+
+    // Update the artist display.
+    artist.innerHTML = data.artist;
 
     // Show the pause button.
     if (sound.state() === "loaded") {
@@ -304,21 +311,25 @@ Player.prototype = {
 var player = new Player([
   {
     title: "Capture Your Perfect",
+    artist: "Tractatus",
     file: "capture_your_perfect",
     howl: null,
   },
   {
     title: "Rave Digger",
+    artist: "other 1",
     file: "rave_digger",
     howl: null,
   },
   {
     title: "80s Vibe",
+    artist: "other 2",
     file: "80s_vibe",
     howl: null,
   },
   {
     title: "Running Out",
+    artist: "other 3",
     file: "running_out",
     howl: null,
   },
@@ -326,9 +337,9 @@ var player = new Player([
 
 // Auto Play music on page load
 
-window.onload = (event) => {
-  player.play();
-};
+// window.onload = (event) => {
+//   player.play();
+// };
 
 // Bind our player controls.
 
