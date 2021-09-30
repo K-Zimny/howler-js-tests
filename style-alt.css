@@ -1,5 +1,9 @@
 body {
   background-color: rgb(128, 122, 122);
+  height: 90vh;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
 }
 
 /* Controls */
@@ -24,6 +28,7 @@ body {
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.33));
   -webkit-user-select: none;
   user-select: none;
+  margin: 0 20px;
 }
 .btn:hover {
   opacity: 1;
@@ -99,7 +104,7 @@ body {
   position: relative;
   /* top: 50%; */
   /* left: 0; */
-  width: 100%;
+  width: 80%;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
@@ -301,12 +306,49 @@ body {
 
 /* ------------------------------ */
 /* custom styles */
+/* ------------------------------ */
+
+/* Flex styles */
+
+.flex-start {
+  justify-content: start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: end;
+}
+
+/* Title styles */
+
+#title {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+/* Progress bar */
+
+.progress-time-container {
+  display: flex;
+  justify-content: center;
+}
+
+#timer,
+#duration {
+  margin: 0 20px;
+}
+
+/* Audio styles */
 
 .audio-container {
-  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
+  margin: 50px auto;
 }
 
 .controlsOuter {
@@ -317,6 +359,5 @@ body {
 
 .controlsInner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
