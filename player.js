@@ -344,9 +344,9 @@ var player = new Player([
 
 // Auto Play music on page load
 
-// window.onload = (event) => {
-//   player.play();
-// };
+window.onload = (event) => {
+  player.play();
+};
 
 // Bind our player controls.
 
